@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=2.0, user-scalable=no"/>
+  <title>ร้านค้าขายของที่ระลึก</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 text-gray-800">
+
+    <nav class="bg-black text-white shadow py-6">
+        <div class="container mx-auto px-6 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
+          <div class="flex justify-between items-center">
+            <div>
+              <h1 class="text-3xl font-bold">ร้านค้าขายของที่ระลึก30ปี</h1>
+              <p class="text-base">สาขาวิทยาการคอมพิวเตอร์ Admin</p>
+            </div>
+      
+            <!--  Hamburger -->
+        
+                <button id="menu-toggle" class="sm:hidden focus:outline-none">
+                  <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2"
+                    viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                      d="M4 6h16M4 12h16M4 18h16" />
+                  </svg>
+                </button>
+          </div>
+      
+          <!-- เมนู -->
+          <div id="menu" class="hidden flex-col space-y-2 mt-4 sm:flex sm:flex-row sm:space-y-0 sm:space-x-4">
+            <button onclick="showProduct('shirt')" class="block text-white hover:bg-gray-700 px-4 py-2 w-full sm:w-auto text-left">เสื้อ</button>
+            <button onclick="showProduct('cup')" class="block text-white hover:bg-gray-700 px-4 py-2 w-full sm:w-auto text-left">แก้ว</button>
+            <button onclick="showProduct('bag')" class="block text-white hover:bg-gray-700 px-4 py-2 w-full sm:w-auto text-left">กระเป๋า</button>
+            <button onclick="showProduct('hat')" class="block text-white hover:bg-gray-700 px-4 py-2 w-full sm:w-auto text-left">หมวก</button>
+          </div>
+        </div>
+      </nav>
+      <script>
+        document.getElementById("menu-toggle").addEventListener("click", function () {
+          const menu = document.getElementById("menu");
+          menu.classList.toggle("hidden");
+        });
+      </script>
+
+
+  <!--Content -->
+  <main class="max-w-full mx-auto p-4 bg-white shadow-md">
+
+    <div class="max-w-4xl p-6">
+    <h2 id="product-title" class="text-2xl font-semibold mb-4">ข้อมูลสินค้า: เสื้อ</h2>
+
+    <!-- เสื้อ -->
+    <section id="product-shirt">
+      <form action="" method="post" class="space-y-5">
+
+        <div>
+          <label for="productsize" class="block font-medium">ขนาด</label>
+          <select name="productsize" id="productsize" class="mt-1 w-full p-2 border rounded">
+            <option value="">--กรุณาเลือกขนาด--</option>
+            <option value="xs">XS</option>
+            <option value="s">S</option>
+            <option value="m" selected>M</option>
+            <option value="l">L</option>
+            <option value="xl">XL</option>
+            <option value="xxl">XXL</option>
+            <option value="3xl">3XL</option>
+          </select>
+        </div>
+
+        <div>
+          <label class="block font-medium mb-1">สี</label>
+          <div class="flex gap-4 flex-wrap">
+            <label><input type="radio" name="productcolor" value="white"> ขาว</label>
+            <label><input type="radio" name="productcolor" value="black"> ดำ</label>
+            <label><input type="radio" name="productcolor" value="blue"> น้ำเงิน</label>
+            <label><input type="radio" name="productcolor" value="gray"> เทา</label>
+          </div>
+        </div>
+
+        <div>
+          <label for="price" class="block font-medium">ราคา</label>
+          <input type="number" name="price" id="price" min="0" max="999999" step="10" value="0.00"
+            class="w-full p-2 border rounded">
+        </div>
+
+        <div>
+          <label for="quantity" class="block font-medium">จำนวน</label>
+          <input type="number" name="quantity" id="quantity" class="w-full p-2 border rounded">
+        </div>
+
+        <div>
+          <label for="modelname" class="block font-medium">ชื่อรุ่น</label>
+          <input type="text" name="modelname" id="modelname" placeholder="ชื่อรุ่น"
+            class="w-full p-2 border rounded">
+        </div>
+
+        <div>
+          <label for="productdetail" class="block font-medium">รายละเอียดสินค้า</label>
+          <textarea name="productdetail" id="productdetail" rows="5" maxlength="5000"
+            placeholder="รายละเอียดสินค้า" class="w-full p-2 border rounded"></textarea>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div>
+            <label for="startdate" class="block font-medium">วันที่เริ่มขาย</label>
+            <input type="date" name="startdate" id="startdate" class="w-full p-2 border rounded">
+          </div>
+          <div>
+            <label for="enddate" class="block font-medium">วันสิ้นสุดการขาย</label>
+            <input type="date" name="enddate" id="enddate" min="2023-01-01" max="2025-07-31"
+              class="w-full p-2 border rounded">
+          </div>
+        </div>
+
+        <div>
+          <label for="productimage" class="block font-medium">รูปภาพสินค้า</label>
+          <input type="file" name="productimage" id="productimage" accept="image/*"
+            class="w-full p-2 border rounded bg-white">
+        </div>
+
+        <div class="flex justify-between">
+          <input type="submit" value="บันทึก" class="bg-gray-800 text-white px-4 py-2 rounded hover:bg-gray-600">
+          <input type="reset" value="ล้างข้อมูล" class="bg-gray-400 text-white px-4 py-2 rounded hover:bg-gray-500">
+        </div>
+
+      </form>
+    </section>
+
+    <!-- แก้ว -->
+    <section id="product-cup" class="hidden">
+
+        <form action="" method="post" class="space-y-5">
+  
+          <div>
+            <label for="productsize" class="block font-medium">ขนาด</label>
+            <select name="productsize" id="productsize" class="mt-1 w-full p-2 border rounded">
+              <option value="">--กรุณาเลือกขนาด--</option>
+              <option value="xs">XS</option>
+              <option value="s">S</option>
+              <option value="m" selected>M</option>
+              <option value="l">L</option>
+              <option value="xl">XL</option>
+              <option value="xxl">XXL</option>
+              <option value="3xl">3XL</option>
+            </select>
+          </div>
+  
+          <div>
+            <label class="block font-medium mb-1">สี</label>
+            <div class="flex gap-4 flex-wrap">
+              <label><input type="radio" name="productcolor" value="white"> ขาว</label>
+              <label><input type="radio" name="productcolor" value="black"> ดำ</label>
+              <label><input type="radio" name="productcolor" value="blue"> น้ำเงิน</label>
+              <label><input type="radio" name="productcolor" value="gray"> เทา</label>
+            </div>
+          </div>
+  
+          <div>
+            <label for="price" class="block font-medium">ราคา </label>
+            <input type="number" name="price" id="price" min="0" max="999999" step="10" value="0.00"
+              class="w-full p-2 border rounded">
+          </div>
+  
+          <div>
+            <label for="quantity" class="block font-medium">จำนวน</label>
+            <input type="number" name="quantity" id="quantity" class="w-full p-2 border rounded">
+          </div>
+  
+          <div>
+            <label for="modelname" class="block font-medium">ชื่อรุ่น</label>
+            <input type="text" name="modelname" id="modelname" placeholder="ชื่อรุ่น"
+              class="w-full p-2 border rounded">
+          </div>
+  
+          <div>
+            <label for="productdetail" class="block font-medium">รายละเอียดสินค้า</label>
+            <textarea name="productdetail" id="productdetail" rows="5" maxlength="5000"
+              placeholder="รายละเอียดสินค้า" class="w-full p-2 border rounded"></textarea>
+          </div>
+  
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div>
+              <label for="startdate" class="block font-medium">วันที่เริ่มขาย</label>
+              <input type="date" name="startdate" id="startdate" class="w-full p-2 border rounded">
+            </div>
+            <div>
+              <label for="enddate" class="block font-medium">วันสิ้นสุดการขาย</label>
+              <input type="date" name="enddate" id="enddate" min="2023-01-01" max="2025-07-31"
+                class="w-full p-2 border rounded">
+            </div>
+          </div>
+  
+          <div>
+            <label for="productimage" class="block font-medium">รูปภาพสินค้า</label>
+            <input type="file" name="productimage" id="productimage" accept="image/*"
+              class="w-full p-2 border rounded bg-white">
+          </div>
+  
+          <div class="flex justify-between">
+            <input type="submit" value="บันทึก" class="bg-gray-800 text-white px-4 py-2 rounded hover:bg-gray-600">
+            <input type="reset" value="ล้างข้อมูล" class="bg-gray-400 text-white px-4 py-2 rounded hover:bg-gray-500">
+          </div>
+        </form>
+      </section>
+
+
+    <!-- กระเป๋า -->
+    <section id="product-bag" class="hidden">
+            <form action="" method="post" class="space-y-5">
+      
+              <div>
+                <label for="productsize" class="block font-medium">ขนาด</label>
+                <select name="productsize" id="productsize" class="mt-1 w-full p-2 border rounded">
+                  <option value="">--กรุณาเลือกขนาด--</option>
+                  <option value="xs">XS</option>
+                  <option value="s">S</option>
+                  <option value="m" selected>M</option>
+                  <option value="l">L</option>
+                  <option value="xl">XL</option>
+                  <option value="xxl">XXL</option>
+                  <option value="3xl">3XL</option>
+                </select>
+              </div>
+      
+              <div>
+                <label class="block font-medium mb-1">สี</label>
+                <div class="flex gap-4 flex-wrap">
+                  <label><input type="radio" name="productcolor" value="white"> ขาว</label>
+                  <label><input type="radio" name="productcolor" value="black"> ดำ</label>
+                  <label><input type="radio" name="productcolor" value="blue"> น้ำเงิน</label>
+                  <label><input type="radio" name="productcolor" value="gray"> เทา</label>
+                </div>
+              </div>
+      
+              <div>
+                <label for="price" class="block font-medium">ราคา</label>
+                <input type="number" name="price" id="price" min="0" max="999999" step="10" value="0.00"
+                  class="w-full p-2 border rounded">
+              </div>
+      
+              <div>
+                <label for="quantity" class="block font-medium">จำนวน</label>
+                <input type="number" name="quantity" id="quantity" class="w-full p-2 border rounded">
+              </div>
+      
+              <div>
+                <label for="modelname" class="block font-medium">ชื่อรุ่น</label>
+                <input type="text" name="modelname" id="modelname" placeholder="ชื่อรุ่น"
+                  class="w-full p-2 border rounded">
+              </div>
+      
+              <div>
+                <label for="productdetail" class="block font-medium">รายละเอียดสินค้า</label>
+                <textarea name="productdetail" id="productdetail" rows="5" maxlength="5000"
+                  placeholder="รายละเอียดสินค้า" class="w-full p-2 border rounded"></textarea>
+              </div>
+      
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div>
+                  <label for="startdate" class="block font-medium">วันที่เริ่มขาย</label>
+                  <input type="date" name="startdate" id="startdate" class="w-full p-2 border rounded">
+                </div>
+                <div>
+                  <label for="enddate" class="block font-medium">วันสิ้นสุดการขาย</label>
+                  <input type="date" name="enddate" id="enddate" min="2023-01-01" max="2025-07-31"
+                    class="w-full p-2 border rounded">
+                </div>
+              </div>
+      
+              <div>
+                <label for="productimage" class="block font-medium">รูปภาพสินค้า</label>
+                <input type="file" name="productimage" id="productimage" accept="image/*"
+                  class="w-full p-2 border rounded bg-white">
+              </div>
+      
+              <div class="flex justify-between">
+                <input type="submit" value="บันทึก" class="bg-gray-800 text-white px-4 py-2 rounded hover:bg-gray-600">
+                <input type="reset" value="ล้างข้อมูล" class="bg-gray-400 text-white px-4 py-2 rounded hover:bg-gray-500">
+              </div>
+      
+            </form>
+    </section>
+
+    <!-- หมวก -->
+    <section id="product-hat" class="hidden">
+            <form action="" method="post" class="space-y-5">
+      
+              <div>
+                <label for="productsize" class="block font-medium">ขนาด</label>
+                <select name="productsize" id="productsize" class="mt-1 w-full p-2 border rounded">
+                  <option value="">--กรุณาเลือกขนาด--</option>
+                  <option value="xs">XS</option>
+                  <option value="s">S</option>
+                  <option value="m" selected>M</option>
+                  <option value="l">L</option>
+                  <option value="xl">XL</option>
+                  <option value="xxl">XXL</option>
+                  <option value="3xl">3XL</option>
+                </select>
+              </div>
+      
+              <div>
+                <label class="block font-medium mb-1">สี</label>
+                <div class="flex gap-4 flex-wrap">
+                  <label><input type="radio" name="productcolor" value="white"> ขาว</label>
+                  <label><input type="radio" name="productcolor" value="black"> ดำ</label>
+                  <label><input type="radio" name="productcolor" value="blue"> น้ำเงิน</label>
+                  <label><input type="radio" name="productcolor" value="gray"> เทา</label>
+                </div>
+              </div>
+      
+              <div>
+                <label for="price" class="block font-medium">ราคา</label>
+                <input type="number" name="price" id="price" min="0" max="999999" step="10" value="0.00"
+                  class="w-full p-2 border rounded">
+              </div>
+      
+              <div>
+                <label for="quantity" class="block font-medium">จำนวน</label>
+                <input type="number" name="quantity" id="quantity" class="w-full p-2 border rounded">
+              </div>
+      
+              <div>
+                <label for="modelname" class="block font-medium">ชื่อรุ่น</label>
+                <input type="text" name="modelname" id="modelname" placeholder="ชื่อรุ่น"
+                  class="w-full p-2 border rounded">
+              </div>
+      
+              <div>
+                <label for="productdetail" class="block font-medium">รายละเอียดสินค้า</label>
+                <textarea name="productdetail" id="productdetail" rows="5" maxlength="5000"
+                  placeholder="รายละเอียดสินค้า" class="w-full p-2 border rounded"></textarea>
+              </div>
+      
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div>
+                  <label for="startdate" class="block font-medium">วันที่เริ่มขาย</label>
+                  <input type="date" name="startdate" id="startdate" class="w-full p-2 border rounded">
+                </div>
+                <div>
+                  <label for="enddate" class="block font-medium">วันสิ้นสุดการขาย</label>
+                  <input type="date" name="enddate" id="enddate" min="2023-01-01" max="2025-07-31"
+                    class="w-full p-2 border rounded">
+                </div>
+              </div>
+      
+              <div>
+                <label for="productimage" class="block font-medium">รูปภาพสินค้า</label>
+                <input type="file" name="productimage" id="productimage" accept="image/*"
+                  class="w-full p-2 border rounded bg-white">
+              </div>
+      
+              <div class="flex justify-between">
+                <input type="submit" value="บันทึก" class="bg-gray-800 text-white px-4 py-2 rounded hover:bg-gray-600">
+                <input type="reset" value="ล้างข้อมูล" class="bg-gray-400 text-white px-4 py-2 rounded hover:bg-gray-500">
+              </div>
+ </div>
+            </form>
+          
+    </section>
+
+  </main>
+
+  <script>
+    const titles = {
+      shirt: 'ข้อมูลสินค้า: เสื้อ',
+      cup: 'ข้อมูลสินค้า: แก้ว',
+      bag: 'ข้อมูลสินค้า: กระเป๋า',
+      hat: 'ข้อมูลสินค้า: หมวก'
+    };
+
+    function showProduct(type) {
+      document.getElementById('product-title').textContent = titles[type];
+
+      ['shirt', 'cup', 'bag', 'hat'].forEach(t => {
+        const el = document.getElementById('product-' + t);
+        if (t === type) el.classList.remove('hidden');
+        else el.classList.add('hidden');
+      });
+    }
+
+    document.addEventListener('DOMContentLoaded', () => showProduct('shirt'));
+  </script>
+
+</body>
+</html>
