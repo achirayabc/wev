@@ -8,23 +8,23 @@
 </head>
 <body class="bg-gray-100 text-gray-800">
 
-
-  <nav class="bg-black text-white shadow py-6">
+<nav class="bg-black text-white shadow py-6">
     <div class="container mx-auto px-6 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
       <div class="flex justify-between items-center w-full sm:w-auto">
         <div>
-          <h1 class="text-3xl font-bold">ร้านค้าขายของที่ระลึก 30 ปี</h1>
-          <p class="text-base">สาขาวิทยาการคอมพิวเตอร์</p>
+          <h1 class="text-3xl font-bold">ร้านค้าขายของที่ระลึก30ปี</h1>
+    
         </div>
 
-        <!-- Hamburger -->
-        <button id="menu-toggle" class="sm:hidden focus:outline-none">
-          <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2"
-            viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round"
-              d="M4 6h16M4 12h16M4 18h16" />
-          </svg>
-        </button>
+        
+      <!-- Hamburger -->
+      <button id="menu-toggle" class="sm:hidden focus:outline-none">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2"
+          viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round"
+            d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+      </button>
       </div>
 
       <div id="menu" class="flex flex-col sm:flex-row sm:space-x-4 space-y-2 sm:space-y-0 mt-4 sm:mt-0">
@@ -32,160 +32,274 @@
         <button data-name="cup" onclick="showProduct('cup')" class="block text-white hover:bg-gray-700 px-4 py-2 w-full sm:w-auto text-left rounded">แก้ว</button>
         <button data-name="bag" onclick="showProduct('bag')" class="block text-white hover:bg-gray-700 px-4 py-2 w-full sm:w-auto text-left rounded">กระเป๋า</button>
         <button data-name="hat" onclick="showProduct('hat')" class="block text-white hover:bg-gray-700 px-4 py-2 w-full sm:w-auto text-left rounded">หมวก</button>
+        <button data-name="brooch" onclick="showProduct('brooch')" class="block text-white hover:bg-gray-700 px-4 py-2 w-full sm:w-auto text-left rounded">เข็มกลัด</button>
+        <button data-name="umbella" onclick="showProduct('umbella')" class="block text-white hover:bg-gray-700 px-4 py-2 w-full sm:w-auto text-left rounded">ร่ม</button>
+        <button data-name="notebook" onclick="showProduct('notebook')" class="block text-white hover:bg-gray-700 px-4 py-2 w-full sm:w-auto text-left rounded">สมุด</button>
+        <button data-name="pen" onclick="showProduct('pen')" class="block text-white hover:bg-gray-700 px-4 py-2 w-full sm:w-auto text-left rounded">ปากกา</button>
       </div>
     </div>
   </nav>
 
+<main class="w-full min-h-screen mx-auto p-4 bg-white shadow-md flex flex-col max-w-7xl">
+    <div id="productGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-6">
 
-  <main class="max-w-full mx-auto p-4 bg-white shadow-md min-h-screen">
-    <div id="productGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-6">
       <!-- เสื้อ -->
-      <div class="bg-white shadow overflow-hidden">
-        <img src="shirt.png" alt="เสื้อ" class="w-full h-64 object-cover">
-        <div class="p-4">
-          <h3 class="text-xl font-bold mb-2">เสื้อCSMJU</h3>
-          <button onclick="showProduct('shirt')" class="text-black hover:underline">ดูรายละเอียด</button>
+      <div class="bg-white shadow rounded overflow-hidden max-w-[300px] w-full mx-auto h-[400px] flex flex-col">
+        <div class="w-full">
+          <img src="csmju/1.png" alt="เสื้อ" class="h-60 object-contain w-full">
+        </div>
+        <div class="p-3 flex flex-col justify-between flex-grow">
+          <h3 class="text-base font-bold">เสื้อCSMJU</h3>
+          <button onclick="showProduct('shirt')" class="bg-black text-white px-3 py-2 text-sm rounded hover:bg-gray-800 mt-2">สั่งซื้อสินค้า</button>
         </div>
       </div>
 
       <!-- แก้ว -->
-      <div class="bg-white shadow overflow-hidden">
-        <img src="bt.png" alt="แก้ว" class="w-full h-64 object-cover">
-        <div class="p-4">
-          <h3 class="text-xl font-bold mb-2">แก้วCSMJU</h3>
-          <button onclick="showProduct('cup')" class="text-black hover:underline">ดูรายละเอียด</button>
+      <div class="bg-white shadow rounded overflow-hidden max-w-[300px] w-full mx-auto h-[400px] flex flex-col">
+        <div class="w-full">
+          <img src="csmju/2.png" alt="แก้ว" class="h-60 object-contain w-full">
+        </div>
+        <div class="p-3 flex flex-col justify-between flex-grow">
+          <h3 class="text-base font-bold">แก้วCSMJU</h3>
+          <button onclick="showProduct('cup')" class="bg-black text-white px-3 py-2 text-sm rounded hover:bg-gray-800 mt-2">สั่งซื้อสินค้า</button>
         </div>
       </div>
 
       <!-- หมวก -->
-      <div class="bg-white shadow overflow-hidden">
-        <img src="cap.png" alt="หมวก" class="w-full h-64 object-cover">
-        <div class="p-4">
-          <h3 class="text-xl font-bold mb-2">หมวกCSMJU</h3>
-          <button onclick="showProduct('hat')" class="text-black hover:underline">ดูรายละเอียด</button>
+      <div class="bg-white shadow rounded overflow-hidden max-w-[300px] w-full mx-auto h-[400px] flex flex-col">
+        <div class="w-full">
+          <img src="csmju/4.png" alt="หมวก" class="h-60 object-contain w-full">
+        </div>
+        <div class="p-3 flex flex-col justify-between flex-grow">
+          <h3 class="text-base font-bold">หมวกCSMJU</h3>
+          <button onclick="showProduct('hat')" class="bg-black text-white px-3 py-2 text-sm rounded hover:bg-gray-800 mt-2">สั่งซื้อสินค้า</button>
         </div>
       </div>
 
       <!-- กระเป๋า -->
-      <div class="bg-white shadow overflow-hidden">
-        <img src="bag.png" alt="กระเป๋า" class="w-full h-64 object-cover">
-        <div class="p-4">
-          <h3 class="text-xl font-bold mb-2">กระเป๋าCSMJU</h3>
-          <button onclick="showProduct('bag')" class="text-black hover:underline">ดูรายละเอียด</button>
+      <div class="bg-white shadow rounded overflow-hidden max-w-[300px] w-full mx-auto h-[400px] flex flex-col">
+        <div class="w-full">
+          <img src="csmju/3.png" alt="กระเป๋า" class="h-60 object-contain w-full">
+        </div>
+        <div class="p-3 flex flex-col justify-between flex-grow">
+          <h3 class="text-base font-bold">กระเป๋าCSMJU</h3>
+          <button onclick="showProduct('bag')" class="bg-black text-white px-3 py-2 text-sm rounded hover:bg-gray-800 mt-2">สั่งซื้อสินค้า</button>
         </div>
       </div>
+
+      <!-- เข็มกลัด -->
+      <div class="bg-white shadow rounded overflow-hidden max-w-[300px] w-full mx-auto h-[400px] flex flex-col">
+        <div class="w-full">
+          <img src="csmju/brooch.png" alt="เข็มกลัด" class="h-60 object-contain w-full">
+        </div>
+        <div class="p-3 flex flex-col justify-between flex-grow">
+          <h3 class="text-base font-bold">เข็มกลัด</h3>
+          <button onclick="showProduct('brooch')" class="bg-black text-white px-3 py-2 text-sm rounded hover:bg-gray-800 mt-2">สั่งซื้อสินค้า</button>
+        </div>
+      </div>
+
+      <!-- ร่ม -->
+      <div class="bg-white shadow rounded overflow-hidden max-w-[300px] w-full mx-auto h-[400px] flex flex-col">
+        <div class="w-full">
+          <img src="csmju/5.png" alt="ร่ม" class="h-60 object-contain w-full">
+        </div>
+        <div class="p-3 flex flex-col justify-between flex-grow">
+          <h3 class="text-base font-bold">ร่มCSMJU</h3>
+          <button onclick="showProduct('umbella')" class="bg-black text-white px-3 py-2 text-sm rounded hover:bg-gray-800 mt-2">สั่งซื้อสินค้า</button>
+        </div>
+      </div>
+
+      <!-- สมุด -->
+      <div class="bg-white shadow rounded overflow-hidden max-w-[300px] w-full mx-auto h-[400px] flex flex-col">
+        <div class="w-full">
+          <img src="csmju/7.png" alt="สมุด" class="h-60 object-contain w-full">
+        </div>
+        <div class="p-3 flex flex-col justify-between flex-grow">
+          <h3 class="text-base font-bold">สมุดCSMJU</h3>
+          <button onclick="showProduct('notebook')" class="bg-black text-white px-3 py-2 text-sm rounded hover:bg-gray-800 mt-2">สั่งซื้อสินค้า</button>
+        </div>
+      </div>
+
+      <!-- ปากกา -->
+      <div class="bg-white shadow rounded overflow-hidden max-w-[300px] w-full mx-auto h-[400px] flex flex-col">
+        <div class="w-full">
+          <img src="csmju/6.png" alt="ปากกา" class="h-60 object-contain w-full">
+        </div>
+        <div class="p-3 flex flex-col justify-between flex-grow">
+          <h3 class="text-base font-bold">ปากกา</h3>
+          <button onclick="showProduct('pen')" class="bg-black text-white px-3 py-2 text-sm rounded hover:bg-gray-800 mt-2">สั่งซื้อสินค้า</button>
+        </div>
+      </div>
+
     </div>
 
+    <div id="productDetail" class="hidden flex flex-col md:flex-row gap-6 bg-white rounded shadow-md p-4 flex-grow">
 
-    <div id="productDetail" class="hidden p-6 h-screen flex flex-col md:flex-row rounded shadow-md mt-6">
+      <div class="w-full md:w-1/2 flex flex-col items-center">
+        <img id="productImage" src="" alt="รูปสินค้า" class="max-w-full max-h-72 object-contain rounded shadow mb-4" />
+        
+        <p id="productPrice" class="text-xl font-bold text-black mb-4">฿0.00</p>
+    
+        <div class="w-full mb-4">
+          <label for="productsize" class="block font-medium mb-1">ขนาด</label>
+          <select id="productsize" class="w-full p-2 border rounded">
+            <option value="">--กรุณาเลือกขนาด--</option>
+            <option value="xs">XS</option>
+            <option value="s">S</option>
+            <option value="m" selected>M</option>
+            <option value="l">L</option>
+            <option value="xl">XL</option>
+            <option value="xxl">XXL</option>
+            <option value="3xl">3XL</option>
+          </select>
+        </div>
+        
+        <div>
+          <label for="productdetail" class="block font-medium">รายละเอียดสินค้า</label>
+          <p> ผลิตภัณฑ์ของที่ระลึกวิทยาการคอมพิวเตอร์แม่โจ้
+             ทำจากวัสดุที่ดีมีคุณภาพ 
+             เหมาะสำหรับทุกกิจกรรม</p>
+          </div>
 
-      
-        <div class="w-full md:w-1/2 p-6 flex flex-col items-center justify-start rounded">
-          <img id="productImage" src="" alt="รูปสินค้า" class="max-w-full max-h-64 object-contain rounded shadow mb-4" />
-          
-          <p id="productPrice" class="text-xl font-bold text-black mb-4">฿0.00</p>
-      
-          <div class="w-full mb-4">
-            <label for="productsize" class="block font-medium">ขนาด</label>
-            <select name="productsize" id="productsize" class="mt-1 w-full p-2 border rounded">
-              <option value="">--กรุณาเลือกขนาด--</option>
-              <option value="xs">XS</option>
-              <option value="s">S</option>
-              <option value="m" selected>M</option>
-              <option value="l">L</option>
-              <option value="xl">XL</option>
-              <option value="xxl">XXL</option>
-              <option value="3xl">3XL</option>
-            </select>
-          </div>
-      
-          <div class="w-full mb-4">
-            <label class="block font-medium mb-1">สี</label>
-            <div class="flex gap-4 flex-wrap">
-              <label><input type="radio" name="productcolor" value="white"> ขาว</label>
-              <label><input type="radio" name="productcolor" value="black"> ดำ</label>
-              <label><input type="radio" name="productcolor" value="blue"> น้ำเงิน</label>
-              <label><input type="radio" name="productcolor" value="gray"> เทา</label>
-            </div>
-          </div>
-          <div>
-            <label for="quantity" class="block font-medium">จำนวน</label>
-            <input type="number" name="quantity" id="quantity" class="w-full p-2 border rounded">
+        <div class="w-full mb-4">
+          <label class="block font-medium mb-1">สี</label>
+          <div class="flex gap-4 flex-wrap">
+            <label><input type="radio" name="productcolor" value="white"> ขาว</label>
+            <label><input type="radio" name="productcolor" value="black"> ดำ</label>
+            <label><input type="radio" name="productcolor" value="blue"> น้ำเงิน</label>
+            <label><input type="radio" name="productcolor" value="gray"> เทา</label>
           </div>
         </div>
-      
+    
+        <div class="w-full mb-4">
+          <label for="quantity" class="block font-medium mb-1">จำนวน</label>
+          <input type="number" id="quantity" class="w-full p-2 border rounded" />
+        </div>
+      </div>
+
    
-        <form class="w-full md:w-1/2 p-6 overflow-auto border-t md:border-t-0 md:border-r border-gray-300 bg-white rounded-b md:rounded-r">
-          <h2 class="text-2xl font-semibold mb-4" id="productName">ชื่อสินค้า</h2>
-      
-          <input type="text" placeholder="ชื่อ-นามสกุล" class="w-full p-3 mb-3 border rounded" />
-          <input type="text" placeholder="ที่อยู่" class="w-full p-3 mb-3 border rounded" />
-          <input type="tel" placeholder="เบอร์โทร" class="w-full p-3 mb-3 border rounded" />
-          <input type="date" class="w-full p-3 mb-3 border rounded" />
-          <select class="w-full p-3 mb-3 border rounded">
+      <form class="w-full md:w-1/2 bg-gray-50 rounded p-4 space-y-4">
+
+        <h2 class="text-2xl font-semibold" id="productName">ชื่อสินค้า</h2>
+    
+        <div>
+          <label class="block font-medium mb-1">ชื่อ นามสกุล</label>
+          <input type="text" placeholder="ชื่อ นามสกุล" class="w-full p-3 border rounded" />
+        </div>
+    
+        <div>
+          <label class="block font-medium mb-1">ที่อยู่</label>
+          <input type="text" placeholder="ที่อยู่" class="w-full p-3 border rounded" />
+        </div>
+    
+        <div>
+          <label class="block font-medium mb-1">เบอร์โทร</label>
+          <input type="tel" placeholder="เบอร์โทร" class="w-full p-3 border rounded" />
+        </div>
+    
+        <div>
+          <label class="block font-medium mb-1">วันที่สั่ง</label>
+          <input type="date" class="w-full p-3 border rounded" />
+        </div>
+    
+        <div>
+          <label class="block font-medium mb-1">การจัดส่ง</label>
+          <select class="w-full p-3 border rounded">
             <option>จัดส่ง</option>
             <option>รับเอง</option>
           </select>
-          <select class="w-full p-3 mb-3 border rounded">
+        </div>
+    
+        <div>
+          <label class="block font-medium mb-1">วิธีการชำระเงิน</label>
+          <select class="w-full p-3 border rounded">
             <option>โอนผ่านธนาคาร</option>
             <option>เก็บเงินปลายทาง</option>
           </select>
-          <input type="file" class="w-full p-3 mb-3 border rounded" />
-          <button class="bg-black text-white px-6 py-3 rounded hover:bg-black w-full">ส่งข้อมูล</button>
-        </form>
-      
-      </div>
-      
-  
+        </div>
+    
+        <div>
+          <label class="block font-medium mb-1">อัพโหลดหลักฐานการชำระเงิน</label>
+          <input type="file" class="w-full p-3 border rounded" />
+        </div>
 
-   
-    <div id="backBtnContainer" class="hidden mt-6">
-      <button onclick="goBack()" class="text-black hover:underline">กลับไปยังสินค้า</button>
+        <button class="bg-black text-white px-6 py-3 rounded hover:bg-gray-800 w-full">ส่งข้อมูล</button>
+      </form>
+
     </div>
-  </main>
 
-  <script>
-    function showProduct(name) {
-  const images = {
-    "shirt": "shirt.png",
-    "cup": "bt.png",
-    "hat": "cap.png",
-    "bag": "bag.png"
-  };
-  const namesTH = {
-    "shirt": "เสื้อ",
-    "cup": "แก้ว",
-    "hat": "หมวก",
-    "bag": "กระเป๋า"
-  };
-  const prices = {
-    "shirt": 299,
-    "cup": 159,
-    "hat": 199,
-    "bag": 249
-  };
+</main>
+<div id="backBtnContainer" class="hidden mt-6 max-w-7xl mx-auto px-4">
+  <button onclick="goBack()" class="bg-black text-white px-6 py-3 rounded hover:bg-gray-800 w-full">กลับไปยังสินค้า</button>
+</div>
 
-  document.getElementById("productGrid").classList.add("hidden");
-  document.getElementById("productDetail").classList.remove("hidden");
-  document.getElementById("backBtnContainer").classList.remove("hidden");
+<script>
+  function showProduct(name) {
+    const images = {
+      "shirt": "csmju/1.png",
+      "cup": "csmju/2.png",
+      "hat": "csmju/4.png",
+      "bag": "csmju/3.png",
+      "brooch":"csmju/brooch.png",
+      "umbella": "csmju/5.png",
+      "notebook": "csmju/7.png",
+      "pen": "csmju/6.png"
+    };
+    const namesTH = {
+      "shirt": "เสื้อ",
+      "cup": "แก้ว",
+      "hat": "หมวก",
+      "bag": "กระเป๋า",
+      "brooch": "เข็มกลัด",
+      "umbella": "ร่ม",
+      "notebook": "สมุด",
+      "pen": "ปากกา"
+    };
+    const prices = {
+      "shirt": 299,
+      "cup": 159,
+      "hat": 199,
+      "bag": 249,
+      "brooch": 89,
+      "umbella": 299,
+      "notebook": 99,
+      "pen": 59
+    };
 
-  document.getElementById("productName").innerText = "แบบฟอร์มสั่งซื้อ: " + (namesTH[name] || name);
-  document.getElementById("productImage").src = images[name] || "";
-  document.getElementById("productPrice").innerText = `฿${prices[name] || 0}`;
-}
-function goBack() {
-  document.getElementById("productGrid").classList.remove("hidden");
-  document.getElementById("productDetail").classList.add("hidden");
-  document.getElementById("backBtnContainer").classList.add("hidden");
-}
+    const productsWithSize = ["shirt"];
 
-        document.getElementById("menu-toggle").addEventListener("click", function () {
-          const menu = document.getElementById("menu");
-          menu.classList.toggle("hidden");
-        });
+    document.getElementById("productGrid").classList.add("hidden");
+    document.getElementById("productDetail").classList.remove("hidden");
+    document.getElementById("backBtnContainer").classList.remove("hidden");
 
+    document.getElementById("productName").innerText = "ทำการสั่งซื้อ " + (namesTH[name] || name);
+    document.getElementById("productImage").src = images[name] || "";
+    document.getElementById("productPrice").innerText = `฿${prices[name] || 0}`;
 
-  </script>
+    const sizeSelect = document.getElementById("productsize");
+    if (productsWithSize.includes(name)) {
+      sizeSelect.parentElement.style.display = "block";
+    } else {
+      sizeSelect.parentElement.style.display = "none";
+    }
+
+    document.getElementById("productDetail").scrollIntoView({ behavior: "smooth" });
+  }
+
+  function goBack() {
+    document.getElementById("productGrid").classList.remove("hidden");
+    document.getElementById("productDetail").classList.add("hidden");
+    document.getElementById("backBtnContainer").classList.add("hidden");
+    // เลื่อนกลับไปที่ตารางสินค้า
+    document.getElementById("productGrid").scrollIntoView({ behavior: "smooth" });
+  }
+
+  document.getElementById('menu-toggle').addEventListener('click', function () {
+    const menu = document.getElementById('menu');
+    menu.classList.toggle('hidden');
+  });
+</script>
+
 
 </body>
 </html>
